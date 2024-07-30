@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // public props
-  title = 'EduForge-Mentor-Mentee-Matching';
+  title = 'Peer-Connect-Hub';
 }
