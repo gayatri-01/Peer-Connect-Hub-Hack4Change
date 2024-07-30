@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-MONGO_URI  =  "mongodb+srv://eduforge_gayatri:1234@eduforge.xddwdus.mongodb.net/?retryWrites=true&w=majority&appName=eduforge"
-
+MONGO_URI  =  "mongodb+srv://admin:admin@peerconnecthub.fkmksd8.mongodb.net/?retryWrites=true&w=majority&appName=PeerConnectHub"
 
 #MONGO_URI = os.getenv("MONGO_URI")
 
@@ -18,7 +17,7 @@ try:
 except Exception as e:
     print(e)
 
-db = client.eduforge
+db = client.peerconnecthub_db
 users = db.users
 permap = db.personMappings
 feedback = db.feedback
