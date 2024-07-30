@@ -54,7 +54,7 @@ app.config.from_object(__name__)
 Session(app)
 
 CORS(
-    app, resources={r"/*": {"origins": "http://localhost:4200"}}
+    app, resources={r"/*": {"origins": "*"}}
 )  # Enable CORS for specific routes
 
 
