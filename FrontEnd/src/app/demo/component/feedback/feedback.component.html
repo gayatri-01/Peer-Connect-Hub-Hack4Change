@@ -1,0 +1,178 @@
+<!-- <div class="timeline">
+    <div *ngFor="let event of events" class="timeline-event">
+      <div class="timeline-event-header">{{ event.date }}</div>
+      <div class="timeline-event-content">{{ event.description }}</div>
+    </div>
+  </div>
+   -->
+
+
+   <html><body>
+
+    <style> 
+    .bold{font-weight:bold;}
+    .time{position:absolute; left:-220px; }
+    .timeline-wrapper {
+    padding-left:80px;
+    min-width: 800px;
+    font-family: 'Helvetica';
+    font-size: 14px;
+    /*border: 1px solid #CCC;*/
+    }
+    .StepProgress {
+    position: relative;
+    padding-left: 150px;
+    list-style: none;
+    }
+    /* .StepProgress::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 10px;
+    height: 100%;
+    padding-left: 150px;
+    border-left: 2px solid #CCC;
+    } */
+    .StepProgress-item {
+    position: relative;
+    counter-increment: list;
+    }
+    .StepProgress-item:not(:last-child) {
+    padding-bottom: 20px;
+    }
+    .StepProgress-item::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: -30px;
+    height: 100%;
+    width: 10px;
+    }
+    .StepProgress-item::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -37px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #CCC;
+    border-radius: 50%;
+    background-color: #5d88cf;
+    }
+    .StepProgress-item.is-done::before {
+    border-left: 2px solid #5d88cf;
+    }
+    .StepProgress-item.is-done::after {
+    /*content: "?";*/
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border: 2px solid #5d88cf;
+    background-color: #5d88cf;
+    }
+    .StepProgress strong {
+    display: block;
+    }
+    </style>
+    
+    <ngx-spinner type="square-jelly-box" bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" [fullScreen]="true"
+    ><p style="color: white"> Analyzing your Feedback... </p></ngx-spinner
+  >
+
+    <div class="timeline-wrapper" *ngIf="canLoad"> 
+     <ul class="StepProgress">
+            <li class="StepProgress-item is-done">
+                <div class="bold time">Friday, 1st March 2024</div> 
+                <div class="col-md-6 col-xl-6" style="display: inline-block;">
+                    <hr />
+                    <div class="pc-component">
+                      <div class="card">
+                        <h5 class="card-header">Session on GCP and AWS</h5>
+                        <div class="card-body" style="min-height: 250px;">
+                          <!-- <h5 class="card-title">Special title treatment</h5> -->
+                          <p class="card-text"> Your critical analysis of their strengths and weaknesses was impressive, and I appreciated the real-world examples you provided. To further enhance your expertise, consider delving deeper into specific areas of interest and staying updated with the latest developments in cloud computing. Overall, you're making great progress, and I'm here to support your continued learning journey</p>
+                          <!-- <a href="javascript:" class="btn btn-primary">Analyse</a> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-6" style="display: inline-block;">
+                    <hr />
+                    <div class="pc-component">
+                      <div class="card">
+                        <h5 class="card-header">Generated Analysis</h5>
+                        <div class="card-body" style="min-height: 250px;">
+                          <!-- <h5 class="card-title">Special title treatment</h5> -->
+                          <p class="card-text"> 
+                            <!-- <pre> -->
+                                <b>Overall Sentiment: </b> <span style="color: green;  font-weight: bold;">POSITIVE</span> <br />
+                                <hr />
+                                <b>Actionables:</b> <br />
+                                1) Focus on specific areas of interest within GCP and AWS. <br />
+2) Keep abreast of new features and updates from both platforms. <br />
+3) Seek opportunities to apply knowledge in practical scenarios and ask questions when needed.
+                        <!-- </pre> -->
+                          <!-- </p> -->
+                          <!-- <a href="javascript:" class="btn btn-primary">Analyse</a> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </li>
+            <li class="StepProgress-item is-done">
+                <div class="bold time">Sunday, 17th March 2024</div> 
+                <div class="col-md-6 col-xl-6" style="display: inline-block;">
+                    <hr />
+                    <div class="pc-component">
+                      <div class="card">
+                        <h5 class="card-header">Session on Industry Soft Skills</h5>
+                        <div class="card-body" style="min-height: 300px;">
+                          <!-- <h5 class="card-title">Special title treatment</h5> -->
+                          <p class="card-text"> I want to express my appreciation for your active participation and engagement during our recent soft skills session. Your thoughtful contributions enriched our discussion, demonstrating your genuine interest in enhancing your professional skills. While your understanding of key concepts like communication and teamwork is evident, I believe there's room for improvement in applying these skills consistently in various scenarios. I encourage you to focus on practicing these skills in real-world situations to further solidify your proficiency. Keep up the excellent work, and don't hesitate to reach out if you need further guidance.</p>
+                          <!-- <a href="javascript:" class="btn btn-primary">Analyse</a> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-6" style="display: inline-block;">
+                    <hr />
+                    <div class="pc-component">
+                      <div class="card">
+                        <h5 class="card-header">Generated Analysis</h5>
+                        <div class="card-body" style="min-height: 300px;">
+                          <!-- <h5 class="card-title">Special title treatment</h5> -->
+                          <p class="card-text"> 
+                            <!-- <pre> -->
+                                <b>Overall Sentiment: </b> <span style="color: #FF9900;  font-weight: bold;">NEUTRAL</span> <br />
+                                <hr />
+                                <b>Actionables:</b> <br />
+                                1) Aim to apply soft skills consistently in various situations. <br />
+2) Seek opportunities to practice communication and teamwork skills in professional contexts. <br />
+3) Request feedback and adjust your approach to continuously improve your soft skills.
+                        <!-- </pre> -->
+                          <!-- </p> -->
+                          <!-- <a href="javascript:" class="btn btn-primary">Analyse</a> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </li>
+            <!-- <li class="StepProgress-item is-done">
+                <div class="bold time">12:00 Pm</div> 
+                <div class="bold">Step 3</div>
+            </li>
+            <li class="StepProgress-item is-done">
+                <div class="bold time">01:00 Pm</div> 
+                <div class="bold">Step 4</div>
+            </li>
+            <li class="StepProgress-item is-done">
+                <div class="bold time">02:00 Pm</div> 
+                <div class="bold">Step 5</div>
+            </li> -->
+        </ul>
+    </div>
+    
+    </body></html>

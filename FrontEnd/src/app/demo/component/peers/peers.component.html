@@ -1,0 +1,17 @@
+<input type="text" class="form-control border-0 shadow-none"placeholder="Search Peers..." [(ngModel)]="searchQuery" (input)="searchStudents()">
+<hr />
+<!-- <form class="px-3">
+    <div class="form-group mb-0 d-flex align-items-center">
+      <i class="ti ti-search"></i>
+      <input type="text" class="form-control border-0 shadow-none" placeholder="Search peers. . ."   [(ngModel)]="searchQuery" (input)="searchStudents()"
+      />
+    </div>
+  </form> -->
+
+<div *ngFor="let student of filteredStudents" class="student">
+  <h2>{{ student.name }}</h2>
+  <p>{{ student.intro }}</p>
+  <p>Course: {{ student.course }}</p>
+  <p>Semester: {{ student.semester }}</p>
+  <a href="javascript:" class="btn btn-primary" style="font-size: small;">Reach out</a> 
+</div>

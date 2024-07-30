@@ -1,0 +1,10 @@
+<div class="card" [ngClass]="cardClass">
+  @if (!hidHeader) {
+    <div class="card-header" [ngClass]="headerClass">
+      <button class="btn btn-primary" style="font-size: large;" (click)="findMentors()">Find My Mentors !</button>
+    </div>
+  }
+  <div class="card-block" [ngClass]="blockClass">
+    <ng-content></ng-content>
+  </div>
+</div>

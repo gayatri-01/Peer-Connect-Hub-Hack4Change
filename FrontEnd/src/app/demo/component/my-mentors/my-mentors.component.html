@@ -1,0 +1,49 @@
+<div class="row">
+  <ngx-spinner type="square-jelly-box" bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" [fullScreen]="true"
+    ><p style="color: white"> Finding Best Mentors for you... </p></ngx-spinner
+  >
+
+  <div class="col-sm-12">
+    <app-card
+      cardTitle="Find My Mentor"
+      [hidHeader]="false"
+      blockClass="pc-component"
+      style="font-size: x-large; align-items: center; text-align: center; align-content: center"
+    >
+      <nav aria-label="breadcrumb" style="font-size: x-large; align-items: center; text-align: center; align-content: center">
+        <ol class="breadcrumb">
+          <li
+            style="font-size: x-large; align-items: center; text-align: center; align-content: center"
+            class="breadcrumb-item active"
+            aria-current="page"
+          >
+            <div class="col-xl-12 mb-5" *ngIf="showMentors">
+              <h5 style="margin-left: 60px">Here are the Mentors Chosen for you!</h5>
+              <br />
+              <!-- <hr /> -->
+              <div class="pc-component">
+                <div class="card-group">
+                  <div class="card" style="min-width: 360px" *ngFor="let mentor of mentors; index as i">
+                    <img class="img-fluid card-img-top rounded-image" src="assets/images/mentors/{{ mentor.image }}" alt="Card image cap" />
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-size: large">{{ mentor.name }}</h5>
+                      <p class="card-text">
+                        {{ mentor.designation }}, {{ mentor.company_name }} <br />
+                        {{ mentor.university }}, {{ mentor.course }}
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted"><button class="btn btn-primary" (click)="openModal(i)">Explain Match</button></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </nav>
+    </app-card>
+  </div>
+
+  <!-- [ Breadcrumbs & Pagination ] end -->
+</div>

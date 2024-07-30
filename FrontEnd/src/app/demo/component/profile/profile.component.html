@@ -1,0 +1,219 @@
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 order-lg-2">
+            <div class="card-profile-image" style="margin-top: 20px">
+              <a href="javascript:void(0)">
+                <img src="assets/images/user/avatar-2.jpg" class="rounded-circle" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <!-- <div class="row">
+              <div class="col">
+                <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  <div>
+                    <span class="heading">22</span>
+                    <span class="description">Friends</span>
+                  </div>
+                  <div>
+                    <span class="heading">10</span>
+                    <span class="description">Photos</span>
+                  </div>
+                  <div>
+                    <span class="heading">89</span>
+                    <span class="description">Comments</span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          <div class="text-center">
+            <h3>{{ UserInformation.firstName }} {{ UserInformation.lastName }}</h3>
+            <div class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>{{ ContactInformation.city }}
+              <span *ngIf="ContactInformation.city !== '' && ContactInformation.country !== ''">,</span>
+              {{ ContactInformation.country }}
+            </div>
+            <div class="h5 mt-4"> <i class="ni business_briefcase-24 mr-2"></i>{{ UserInformation.jobTitle }} </div>
+            <div> <i class="ni education_hat mr-2"></i>{{ UserInformation.company }} </div>
+            <div class="h5 mt-4"> <i class="ni business_briefcase-24 mr-2"></i>Student </div>
+            <div> <i class="ni education_hat mr-2"></i>{{ UserInformation.degree }} </div>
+            <div> <i class="ni education_hat mr-2"></i>{{ UserInformation.university }} </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">My Profile</h3>
+            </div>
+            <div class="col-4 align-items-right justify-content-end">
+              <button class="btn btn-sm btn-primary px-3" type="submit" (click)="onSaveClick()">Save</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" style="background-color: #e6f7f4">
+          <form>
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-username">Username</label>
+                    <input
+                      type="text"
+                      [(ngModel)]="UserInformation.username"
+                      name="username"
+                      id="input-username"
+                      class="form-control form-control-alternative"
+                      placeholder="Username"
+                      required
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-email">Email Address</label>
+                    <input
+                      type="email"
+                      [(ngModel)]="UserInformation.emailAddress"
+                      id="input-email"
+                      name="email"
+                      class="form-control form-control-alternative"
+                      placeholder="stebin.ben@bits-pilani.wilp.ac.in"
+                      required
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-first-name">First name</label>
+                    <input
+                      type="text"
+                      [(ngModel)]="UserInformation.firstName"
+                      id="input-first-name"
+                      name="firstname"
+                      class="form-control form-control-alternative"
+                      placeholder="First name"
+                      value="Stebin"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-last-name">Last name</label>
+                    <input
+                      type="text"
+                      [(ngModel)]="UserInformation.lastName"
+                      id="input-last-name"
+                      name="lastname"
+                      class="form-control form-control-alternative"
+                      placeholder="Last name"
+                      value="Ben"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Contact information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-address">Address</label>
+                    <input
+                      type="text"
+                      [(ngModel)]="ContactInformation.address"
+                      id="input-address"
+                      name="address"
+                      class="form-control form-control-alternative"
+                      placeholder="Home Address"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-city">City</label>
+                    <input
+                      type="text"
+                      [(ngModel)]="ContactInformation.city"
+                      id="input-city"
+                      name="city"
+                      class="form-control form-control-alternative"
+                      placeholder="City"
+                      value="Mumbai"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-country">Country</label>
+                    <input
+                      type="text"
+                      [(ngModel)]="ContactInformation.country"
+                      id="input-country"
+                      name="country"
+                      class="form-control form-control-alternative"
+                      placeholder="Country"
+                      value="India"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label required" for="input-country">Postal code</label>
+                    <input
+                      type="number"
+                      [(ngModel)]="ContactInformation.postalCode"
+                      id="input-postal-code"
+                      name="postalCode"
+                      class="form-control form-control-alternative"
+                      placeholder="Postal code"
+                      value="421204"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Description -->
+            <h6 class="heading-small text-muted mb-4">About me</h6>
+            <div class="pl-lg-4">
+              <div *ngIf="enable">
+                <div *ngFor="let item of mapEntries">
+                  <label style="margin-top: 15px" class="form-control-label required">{{ myMap.get(item.key) }}</label>
+                  <select
+                    class="my-choices-list--multiple"
+                    [(ngModel)]="AboutMe[item.key]"
+                    id="{{ item.key }}"
+                    name="{{ item.key }}"
+                    class="form-control form-control-alternative"
+                  >
+                    <option value="Select">Select</option>
+                    <option *ngFor="let option of item.value" [value]="option">{{ option }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

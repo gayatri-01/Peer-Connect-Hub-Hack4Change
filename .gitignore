@@ -1,0 +1,8 @@
+.env
+chromedriver
+.DS_Store
+venv/
+.vscode/
+*.pkl
+*.csv
+flask_session_cache
